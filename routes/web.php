@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Authcontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+ 
+ 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [Authcontroller::class, 'index']);
+Route::get('forgot-password',[authcontroller::class, 'forgot_password']);

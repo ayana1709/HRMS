@@ -2,15 +2,14 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
-class AuthController extends Controller{
+class AuthController extends Controller{ 
 
-    public function index (Request $request){
+public function index(Request $request){
         return  view('login');
     }
-    public function forgot_password(Request $request)
+public function forgot_password(Request $request)
     {
-       echo "forgot ";
-       die();
+       return view('forgot_password');
     }
 
 }

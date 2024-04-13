@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Authcontroller;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,5 +15,5 @@ use App\Http\Controllers\Authcontroller;
  
  
 
-Route::get('/', [Authcontroller::class, 'index']);
-Route::get('forgot-password',[authcontroller::class, 'forgot_password']);
+Route::get('/', [AuthController::class, 'index']);
+Route::get('forgot-password',[authController::class, 'forgot_password']);

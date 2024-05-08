@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\controllers\AuthController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,8 +13,8 @@ use App\Http\controllers\AuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-ROute::get('/', [AuthController::class, 'index'])
+
+Route::get('/', [AuthController::class, 'index']);
+Route::get('forgot-password', [AuthController::class, 'forgot_password']);
+Route::get('register', [AuthController::class, 'register']);

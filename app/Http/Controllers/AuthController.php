@@ -19,6 +19,13 @@ class AuthController extends Controller{
     } 
     public function register_post(Request $request){
       // dd($request->all()); 
+      $user = request()->validate([
+         'name'=> 'required',
+         'email'=> 'required|unique:users',
+         'password'=>'required|min:6',
+         'confirm password'=>'required_with:password|same:password|min:6',
+
+      ]);
       $user = new User; 
       $user->name  =  trim($request->name);
       $user->email = trim($request->Email);

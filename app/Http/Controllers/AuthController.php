@@ -21,9 +21,9 @@ class AuthController extends Controller{
       // dd($request->all()); 
       $user = request()->validate([
          'name'=> 'required',
-         'email'=> 'required|unique:users',
+         'Email'=> 'required|unique:users',
          'password'=>'required|min:6',
-         'confirm password'=>'required_with:password|same:password|min:6',
+         'confirm_password'=>'required_with:password|same:password|min:6'
 
       ]);
       $user = new User; 
@@ -35,7 +35,7 @@ class AuthController extends Controller{
 
 
 
-      return redirect('/')->with('success', 'Register successfully');
+      return redirect('/')->with('success', 'Register successfully. ');
           
     }
 }

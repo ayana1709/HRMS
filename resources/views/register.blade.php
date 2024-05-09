@@ -64,7 +64,7 @@
 <span style="color: red;">{{$errors->first('password')}}</span>
  
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="confirm Password" name="confirm password" required value="{{old('confirm password')}}" >
+          <input type="password" class="form-control" placeholder="confirm Password" name="confirm_password" required value="{{old('confirm_password')}}" >
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -72,7 +72,7 @@
           </div>
         </div>
 
-<span style="color: red;">{{$errors->first('confirm password')}}</span>
+<span style="color: red;">{{$errors->first('confirm_password')}}</span>
 
         <div class="row">
           <div class="col-8">

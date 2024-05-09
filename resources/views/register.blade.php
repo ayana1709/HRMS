@@ -115,30 +115,31 @@
 <script type="text/javascript">
     function duplicateEmail(element){
        var email = $(element).val(); 
-       console.log(email);
-    //   $.ajax({
-    //     type: "POST",
-    //     url:  '{{ url('checkemail')}}',
-    //     data:{
-    //            email: email,
-    //            _token: "{{csrf_token()}}"
-    //     },
-    //     dataType: "json",
-    //     success:  function(res){
-    //       if(res.exists){
-    //          $(".duplicate_message").html("That email is taken. try another")
-    //       }else{
-    //           $(".duplicate_message").html("")
-    //       }
+      //  console.log(email);
+      // alert()
+      $.ajax({
+        type: "POST",
+        url:  '{{ url('checkemail')}}',
+        data:{
+               email: email,
+               _token: "{{csrf_token()}}"
+        },
+        dataType: "json",
+        success:  function(res){
+          if(res.exists){
+             $(".duplicate_message").html("That email is taken. try another")
+          }else{
+              $(".duplicate_message").html("")
+          }
 
-    //     },
-    //     error:function(jqXHR, exception){  
+        },
+        error:function(jqXHR, exception){  
 
-    //     }
+        }
 
-    //   });
+      });
 
-    // 
+    
   } 
   
 

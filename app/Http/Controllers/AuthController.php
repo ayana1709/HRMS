@@ -17,6 +17,10 @@ class AuthController extends Controller{
       // echo"ayana";die(); 
       return view('register');
     } 
+
+
+
+
     public function register_post(Request $request){
       // dd($request->all()); 
       $user = request()->validate([
@@ -38,5 +42,35 @@ class AuthController extends Controller{
       return redirect('/')->with('success', 'Register successfully. ');
           
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public function CheckEmail(Request $request){
+
+      $email =  $request->input('email'); 
+      $isExists = User::where('email', $email)->first();
+      if($isExists){
+  return response()->json(array("exists"=> true));
+      }else{
+  return response()->json(array("exists"=> false));
+
+      }
+    }
+
 }
 ?>
